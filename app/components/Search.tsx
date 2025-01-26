@@ -8,7 +8,7 @@ const Search = ({ onSearch }: SearchProps) => {
   }
 
   return (
-    <div className="mb-6">
+    <div className="sticky top-0 bg-gray-100 z-10 shadow-md mb-4 rounded-md">
       <input
         type="text"
         placeholder="搜尋"
