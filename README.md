@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 應用程式 - App Store 應用列表與推薦頁面
 
-## Getting Started
+模擬 App Store 的應用程式列表和應用程式推薦頁面
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 環境要求
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node 版本：`20.x` 或以上
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 啟動步驟
 
-## Learn More
+- npm install
+- npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 功能
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## (期限內)已完成
 
-## Deploy on Vercel
+1. **應用列表**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   - ✅ 顯示排名前 100 個免費應用的相關數據
+   - ✅ 支持垂直滾動
+   - ✅ 應用圖案要顯示成圓形
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **應用推薦**
+
+   - ✅ 顯示排名前 10 個推薦應用的相關數據
+   - ✅ 支持水平滾動顯示
+   - ✅ 應用圖案要顯示成方形圖角
+   - ✅ 顯示位置在應用列表上排
+
+3. **應用搜尋**
+   - ✅ 搜尋命中的應用記錄顯示在應用列表與推薦應用中
+   - ✅ 搜尋列永遠固定在頁面的最頂, 就算應用列表垂直滾動時也是固定
+   - ✅ 每次打字的時候, 會立即進行搜尋
+   - ✅ 進行搜尋時, 命中的條件是以下其中一個 API 數據欄位有包含關鍵字
+     i. feed.entry[].im:name
+     ii. feed.entry[].summary.label
+     iii. feed.entry[].title.label
+
+## (期限內)未完成，會再陸續補上的功能
+
+1. **應用列表**
+   - 每 10 個記錄一頁
+
+---
+
+## 目錄結構
+
+app/
+├── components/ # 可重複使用的元件
+│ ├── ApplicationList.tsx # 應用列表元件
+│ ├── Recommendations.tsx # 推薦應用元件
+│ ├── Search.tsx # 搜尋框元件
+├── home/ # 主頁
+│ ├── page.tsx # 主頁面內容
+├── favicon.ico  
+├── globals.css  
+├── layout.tsx
+├── page.tsx # 主頁（根路徑頁面）已設定自動導向到 home page
