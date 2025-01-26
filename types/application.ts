@@ -3,6 +3,8 @@ export type Application = {
   "im:image": { label: string }[]
   "im:name": { label: string }
   category: { attributes: { label: string } }
+  summary?: { label: string }
+  title?: { label: string }
 }
 
 export type Recommendation = {

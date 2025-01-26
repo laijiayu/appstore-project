@@ -5,10 +5,10 @@ type ApplicationListProps = {
   applications: Application[]
 }
 
-const ApplicationList: React.FC<ApplicationListProps> = ({ applications }) => {
+const ApplicationList = ({ applications }: ApplicationListProps) => {
   return (
     <div>
-      <h2 className="text-xl font-bold mb-4">應用列表</h2>
+      <h2 className="text-xl font-bold mb-4">應用程式列表</h2>
       <ul className="grid grid-cols-1 gap-4">
         {applications.map((app, index) => (
           <li key={app.id.attributes["im:id"]} className="bg-white p-4 rounded-md shadow">
