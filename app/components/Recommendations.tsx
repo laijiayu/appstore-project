@@ -30,7 +30,7 @@ const Recommendations: React.FC = () => {
               alt={app["im:name"].label}
               width={64}
               height={64}
-              className="h-16 w-16 mx-auto"
+              className="h-16 w-16 mx-auto rounded-lg"
             />
             <p className="text-center text-sm font-medium mt-2">{app["im:name"].label}</p>
             <p className="text-center text-xs text-gray-500">{app.category.attributes.label}</p>
