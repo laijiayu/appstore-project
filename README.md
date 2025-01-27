@@ -50,14 +50,18 @@
 
 ## 目錄結構
 
+## 目錄結構
+
+```plaintext
 app/
 ├── components/
-│ ├── ApplicationList.tsx # 應用列表元件
-│ ├── Recommendations.tsx # 推薦應用元件
-│ ├── Search.tsx # 搜尋框元件
-├── home/ # 主頁
-│ ├── page.tsx # 主頁面內容
-├── favicon.ico  
-├── globals.css  
+│   ├── ApplicationList.tsx   # 應用列表元件
+│   ├── Recommendations.tsx   # 推薦應用元件
+│   ├── Search.tsx            # 搜尋框元件
+├── home/                     # 主頁
+│   ├── page.tsx              # 主頁面內容
+├── favicon.ico
+├── globals.css
 ├── layout.tsx
-├── page.tsx # 主頁（根路徑頁面）已設定自動導向到 home page
+├── page.tsx                  # （根路徑頁面，已設定自動導向到 home page）
+```
