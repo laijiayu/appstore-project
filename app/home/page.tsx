@@ -6,11 +6,14 @@ import { Application } from "@/types/application"
 import Search from "../components/Search"
 import ApplicationList from "../components/ApplicationList"
 import Recommendations from "../components/Recommendations"
+import { Pagination } from "antd"
 
 const HomePage = () => {
   const [applications, setApplications] = useState<Application[]>([])
   const [searchQuery, setSearchQuery] = useState("")
   const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [pageSize, setPageSize] = useState(10)
 
   const filteredApplications = applications.filter(
     (app) =>
@@ -18,6 +21,9 @@ const HomePage = () => {
       app.summary?.label?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       app.title?.label?.toLowerCase().includes(searchQuery.toLowerCase())
   )
+
+  const startIndex = (currentPage - 1) * pageSize
+  const currentApplications = filteredApplications.slice(startIndex, startIndex + pageSize)
 
   useEffect(() => {
     const fetchApplications = async () => {
@@ -35,7 +41,7 @@ const HomePage = () => {
   }, [])
 
   if (loading) {
-    return <div className="text-center py-10">loading....</div>
+    return <div className="text-center py-10">Loading...</div>
   }
 
   return (
@@ -48,7 +54,21 @@ const HomePage = () => {
         <Recommendations applications={filteredApplications.slice(0, 10)} />
 
         {/* 應用程式列表 */}
-        <ApplicationList applications={filteredApplications} />
+        <ApplicationList applications={currentApplications} />
+
+        <div className="flex justify-center mt-6">
+          <Pagination
+            current={currentPage}
+            pageSize={pageSize}
+            total={filteredApplications.length}
+            showSizeChanger
+            onChange={(page, size) => {
+              setCurrentPage(page)
+              setPageSize(size)
+            }}
+            pageSizeOptions={[10, 50, 100]}
+          />
+        </div>
       </div>
     </div>
   )
