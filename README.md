@@ -44,7 +44,7 @@
      ii. feed.entry[].summary.label
      iii. feed.entry[].title.label
 
-## (期限內)未完成，會再陸續補上的功能
+## (期限內)未完成，會再陸續補上的功能 (待增加)
 
 ---
 
