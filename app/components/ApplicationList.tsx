@@ -3,9 +3,11 @@ import { Application } from "@/types/application"
 
 type ApplicationListProps = {
   applications: Application[]
+  currentPage: number
+  pageSize: number
 }
 
-const ApplicationList = ({ applications }: ApplicationListProps) => {
+const ApplicationList = ({ applications, currentPage, pageSize }: ApplicationListProps) => {
   return (
     <div>
       <h2 className="text-xl font-bold mb-4">應用程式列表</h2>
@@ -23,7 +25,7 @@ const ApplicationList = ({ applications }: ApplicationListProps) => {
               <div className="ml-4">
                 <p className="text-sm font-medium">{app["im:name"].label}</p>
                 <p className="text-xs text-gray-500">{app.category.attributes.label}</p>
-                <p className="text-xs text-yellow-500">排名: {index + 1}</p>
+                <p className="text-xs text-yellow-500">排名: {(currentPage - 1) * pageSize + index + 1}</p>
               </div>
             </div>
           </li>

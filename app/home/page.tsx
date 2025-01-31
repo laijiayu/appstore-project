@@ -54,7 +54,7 @@ const HomePage = () => {
         <Recommendations applications={filteredApplications.slice(0, 10)} />
 
         {/* 應用程式列表 */}
-        <ApplicationList applications={currentApplications} />
+        <ApplicationList applications={currentApplications} currentPage={currentPage} pageSize={pageSize} />
 
         <PagePagination
           currentPage={currentPage}
