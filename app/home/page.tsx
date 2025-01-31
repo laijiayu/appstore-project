@@ -6,7 +6,7 @@ import { Application } from "@/types/application"
 import Search from "../components/Search"
 import ApplicationList from "../components/ApplicationList"
 import Recommendations from "../components/Recommendations"
-import { Pagination } from "antd"
+import PagePagination from "../components/PagePagination"
 
 const HomePage = () => {
   const [applications, setApplications] = useState<Application[]>([])
@@ -56,19 +56,15 @@ const HomePage = () => {
         {/* 應用程式列表 */}
         <ApplicationList applications={currentApplications} />
 
-        <div className="flex justify-center mt-6">
-          <Pagination
-            current={currentPage}
-            pageSize={pageSize}
-            total={filteredApplications.length}
-            showSizeChanger
-            onChange={(page, size) => {
-              setCurrentPage(page)
-              setPageSize(size)
-            }}
-            pageSizeOptions={[10, 50, 100]}
-          />
-        </div>
+        <PagePagination
+          currentPage={currentPage}
+          pageSize={pageSize}
+          total={filteredApplications.length}
+          onPageChange={(page, size) => {
+            setCurrentPage(page)
+            setPageSize(size)
+          }}
+        />
       </div>
     </div>
   )
