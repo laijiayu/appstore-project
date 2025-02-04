@@ -8,6 +8,7 @@ import ApplicationList from "../components/ApplicationList"
 import Recommendations from "../components/Recommendations"
 import PagePagination from "../components/PagePagination"
 import { Spin } from "antd"
+import "@ant-design/v5-patch-for-react-19"
 
 const HomePage = () => {
   const [applications, setApplications] = useState<Application[]>([])
