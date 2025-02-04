@@ -7,6 +7,7 @@ import Search from "../components/Search"
 import ApplicationList from "../components/ApplicationList"
 import Recommendations from "../components/Recommendations"
 import PagePagination from "../components/PagePagination"
+import { Spin } from "antd"
 
 const HomePage = () => {
   const [applications, setApplications] = useState<Application[]>([])
@@ -41,7 +42,11 @@ const HomePage = () => {
   }, [])
 
   if (loading) {
-    return <div className="text-center py-10">Loading...</div>
+    return (
+      <div className="text-center py-10">
+        <Spin />
+      </div>
+    )
   }
 
   return (
