@@ -44,7 +44,10 @@
      ii. feed.entry[].summary.label
      iii. feed.entry[].title.label
 
-## (期限內)未完成，會再陸續補上的功能 (待增加)
+## (期限內)未完成，陸續補上的功能 (待增加)
+
+- ✅ 等待 api 載入，新增 Spin 的樣式
+
 
     👀 一些小 BUG 或 畫面可以怎麼弄比較好看 @-@
 
