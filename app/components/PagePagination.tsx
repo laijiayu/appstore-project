@@ -17,7 +17,7 @@ const PagePagination = ({ currentPage, pageSize, total, onPageChange }: PagePagi
         total={total}
         showSizeChanger
         onChange={onPageChange}
-        pageSizeOptions={[10, 50, 100]}
+        pageSizeOptions={[10]}
       />
     </div>
   )
