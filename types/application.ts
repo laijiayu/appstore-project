@@ -5,6 +5,7 @@ export type Application = {
   category: { attributes: { label: string } }
   summary?: { label: string }
   title?: { label: string }
+  link?: { attributes: { href: string; rel: string } } | { attributes: { href: string; rel: string } }[]
 }
 
 export type Recommendation = {
@@ -12,4 +13,5 @@ export type Recommendation = {
   "im:image": { label: string }[]
   "im:name": { label: string }
   category: { attributes: { label: string } }
+  link?: { attributes: { href: string; rel: string } } | { attributes: { href: string; rel: string } }[]
 }
